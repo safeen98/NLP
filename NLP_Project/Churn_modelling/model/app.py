@@ -5,13 +5,13 @@ import tensorflow as tf
 
 #Loading our model
 
-model = tf.keras.models.load_model('NLP/NLP_Project/Churn_modelling/model/model.h5')
+model = tf.keras.models.load_model('model.h5')
 
-with open('NLP/NLP_Project/Churn_modelling/model/label_encoder_gender.pkl','rb') as file:
+with open('label_encoder_gender.pkl','rb') as file:
     label_encoder = pickle.load(file)
-with open('NLP/NLP_Project/Churn_modelling/model/ohe_encoder_geo.pkl','rb') as file:
+with open('ohe_encoder_geo.pkl','rb') as file:
     ohe = pickle.load(file)
-with open('NLP/NLP_Project/Churn_modelling/model/standardScaler.pkl','rb') as file:
+with open('standardScaler.pkl','rb') as file:
     standardScaler = pickle.load(file)
 
 #streamlit app
