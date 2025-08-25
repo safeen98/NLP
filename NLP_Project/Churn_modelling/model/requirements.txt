@@ -1,6 +1,5 @@
 streamlit
 pandas
 tensorflow
-scikitlearn
 numpy
 scikit-learn
