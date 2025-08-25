@@ -4,14 +4,19 @@ import pickle
 import tensorflow as tf
 
 #Loading our model
+import os
+BASE_DIR = os.path.dirname(__file__)
+model_path = os.path.join(BASE_DIR, "model.h5")
+encoder_path = os.path.join(BASE_DIR, "label_encoder_gender.pkl")
+ohe_encoder_path = os.path.join(BASE_DIR, "ohe_encoder_geo.pkl")
+scaler_path = os.path.join(BASE_DIR, "standardScaler.pkl")
+model = tf.keras.models.load_model(model_path)
 
-model = tf.keras.models.load_model('model.h5')
-
-with open('label_encoder_gender.pkl','rb') as file:
+with open(encoder_path,'rb') as file:
     label_encoder = pickle.load(file)
-with open('ohe_encoder_geo.pkl','rb') as file:
+with open(ohe_encoder_path,'rb') as file:
     ohe = pickle.load(file)
-with open('standardScaler.pkl','rb') as file:
+with open(scaler_path,'rb') as file:
     standardScaler = pickle.load(file)
 
 #streamlit app
